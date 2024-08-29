@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "lib": [
+            "ESNext"
+        ],
+        "preserveWatchOutput": true,
+    },
+    "references": [
+        {
+            "path": "./packages/liquidity-pool"
+        }
+    ],
+    "files": []
+}

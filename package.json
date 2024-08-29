@@ -1,0 +1,34 @@
+{
+  "name": "bonzoutils",
+  "private": true,
+  "version": "0.0.3",
+  "scripts": {
+    "clean": "node script/clean.mjs",
+    "build:tsc": "tsc --build ./tsconfig.project.json",
+    "build:package": "node script/build-package.mjs",
+    "build": "npm run clean && npm run build:tsc && npm run build:package",
+    "build:tgz": "node script/build-tgz.mjs",
+    "test": "mocha --config test/mocha-config.cjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bonzo-labs/bonzo-utils.git"
+  },
+  "author": "Bonzo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bonzo-labs/bonzo-utils/issues"
+  },
+  "homepage": "https://github.com/bonzo-labs/bonzo-utils#readme",
+  "devDependencies": {
+    "@types/mocha": "^10.0.7",
+    "dotenv": "^16.4.5",
+    "ethers": "^6.13.2",
+    "mocha": "^10.7.3",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.4"
+  },
+  "workspaces": [
+    "packages/*"
+  ]
+}

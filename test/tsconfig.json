@@ -1,0 +1,14 @@
+{
+    "extends": "../tsconfig.package.json",
+    "compilerOptions": {
+        "paths": {
+            "@bonzolabs/liquidity-pool": [
+                "../packages/liquidity-pool/src/index.ts"
+            ]
+        },
+    },
+    "include": [
+        "./**/*.ts",
+        "../packages/**/*.ts"
+    ]
+}
