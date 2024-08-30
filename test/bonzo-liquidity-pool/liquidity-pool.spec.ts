@@ -38,7 +38,7 @@ describe('LiquidityPool', function () {
             for (let i = 0; i < balances.length; i++) {
                 let erc20 = new Erc20(getProvider(), balances[i].address);
                 let expected = await erc20.balanceOf(getTestAccountAddress());
-                assert.strictEqual(balances[i].balance, expected);
+                assert.deepEqual(balances[i].balance, expected);
             }
         });
     });

@@ -3,6 +3,7 @@
  * Released under the MIT License.
  * See LICENSE file in the project root for full license information.
  */
+import { BigNumber } from "ethers";
 /**
  * Basic static information concerning a token
  * related to the lending pool.
@@ -23,7 +24,7 @@ export interface TokenData {
     /**
      * Number of decimals associated with the token.
      */
-    decimals: bigint;
+    decimals: BigNumber;
 }
 /**
  * Combined token and balance information concerning
@@ -34,5 +35,5 @@ export interface UserTokenData extends TokenData {
      * The accounts current balance of token, 
      * denominated in the smallest unit.
      */
-    balance: bigint;
+    balance: BigNumber;
 }

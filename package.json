@@ -1,7 +1,7 @@
 {
   "name": "bonzoutils",
   "private": true,
-  "version": "0.0.3",
+  "version": "5.7.2",
   "scripts": {
     "clean": "node script/clean.mjs",
     "build:tsc": "tsc --build ./tsconfig.project.json",
@@ -23,7 +23,7 @@
   "devDependencies": {
     "@types/mocha": "^10.0.7",
     "dotenv": "^16.4.5",
-    "ethers": "^6.13.2",
+    "ethers": "5.7.2",
     "mocha": "^10.7.3",
     "ts-node": "^10.9.2",
     "typescript": "^5.5.4"

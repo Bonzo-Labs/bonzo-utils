@@ -10,7 +10,7 @@ This project contains a helper client providing convenient programmatic access t
 
 ## Building
 
-The authors of this project attempted to take a minimalist approach with regards to package dependencies.  The most significant package dependency is the [ethers](https://docs.ethers.org/v6/), which is required for accessing the smart contract interfaces on the ledger thru a [JSON-RPC Relay](https://docs.hedera.com/hedera/core-concepts/smart-contracts/deploying-smart-contracts/json-rpc-relay).
+The authors of this project attempted to take a minimalist approach with regards to package dependencies.  The most significant package dependency is the [ethers](https://docs.ethers.org/v5/), which is required for accessing the smart contract interfaces on the ledger thru a [JSON-RPC Relay](https://docs.hedera.com/hedera/core-concepts/smart-contracts/deploying-smart-contracts/json-rpc-relay).
 
 Retriving and building the project is simple, in an environment with [nodejs](https://nodejs.org/en) and [git](https://git-scm.com/) installed, enter the following:
 

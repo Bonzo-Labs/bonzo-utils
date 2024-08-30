@@ -20,7 +20,7 @@ After installation, an instance of a pool client can be created with the `Liquid
 const pool = await LiquidityPool.create(getProvider(), getPoolAddress());
 ```
 
-Where `getProvider()` returns a [ethers](https://docs.ethers.org/v6/) [Provider](https://docs.ethers.org/v6/api/providers/#about-providers) object connecting the library to a [JSON-RPC](https://docs.hedera.com/hedera/core-concepts/smart-contracts/deploying-smart-contracts/json-rpc-relay) relay (such as [hashio](https://www.hashgraph.com/hashio/)) and `getPoolAddress()` returns the contract address of the Bonzo Liquidity Pool contract for the ledger the Provider is connected with.
+Where `getProvider()` returns a [ethers](https://docs.ethers.org/v5/) [Provider](https://docs.ethers.org/v5/api/providers/#about-providers) object connecting the library to a [JSON-RPC](https://docs.hedera.com/hedera/core-concepts/smart-contracts/deploying-smart-contracts/json-rpc-relay) relay (such as [hashio](https://www.hashgraph.com/hashio/)) and `getPoolAddress()` returns the contract address of the Bonzo Liquidity Pool contract for the ledger the Provider is connected with.
 
 
 After Creation, the pool client can query for an account’s reserve, aToken and debt token balances with the `LendingPool.getBalances()` method:

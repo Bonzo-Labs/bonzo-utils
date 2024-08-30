@@ -3,8 +3,7 @@
  * Released under the MIT License.
  * See LICENSE file in the project root for full license information.
  */
-import { AddressLike, Contract, Provider } from "ethers";
-import { asStringOrAddressable } from "./util";
+import { Contract, providers } from "ethers";
 import { TokenData, UserTokenData } from "./token-info";
 import { Erc20 } from "./erc20";
 /**
@@ -58,8 +57,8 @@ export class LiquidityPool {
      * @param address the address of the lending pool contract.
      * @returns a promise returning a configured instance of the LendingPool class.
      */
-    static async create(provider: Provider, address: AddressLike): Promise<LiquidityPool> {
-        const contract = new Contract(asStringOrAddressable(address), abi, provider);
+    static async create(provider: providers.Provider, address: string): Promise<LiquidityPool> {
+        const contract = new Contract(address, abi, provider);
         const tokenAddresses = await contract.getReservesList() as string[];
         const tokens = (await Promise.all(tokenAddresses.map<Promise<TokenData[]>>(async (token: string) => {
             const data = await contract.getReserveData(token);
@@ -87,10 +86,10 @@ export class LiquidityPool {
      * the known tokens managed by this pool, including account 
      * balances for each token.
      */
-    public getBalances(account: AddressLike): Promise<UserTokenData[]> {
+    public getBalances(account: string): Promise<UserTokenData[]> {
         const contract = this._contract;
         const reserves = this._tokens.map(async token => {
-            const erc20 = new Erc20(contract.runner!.provider!, token.address);
+            const erc20 = new Erc20(contract.provider!, token.address);
             const balance = await erc20.balanceOf(account);
             return { ...token, balance };
         });

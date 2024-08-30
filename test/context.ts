@@ -4,11 +4,11 @@
  * See LICENSE file in the project root for full license information.
  */
 import dotenv from "dotenv";
-import { JsonRpcProvider, Provider } from "ethers";
+import { providers } from "ethers";
 
 let poolAddress: string;
 let testAccountAddress: string;
-let provider: Provider;
+let provider: providers.Provider;
 
 dotenv.config();
 
@@ -26,7 +26,7 @@ export const mochaHooks = {
         if (!providerAddress) {
             throw new Error('Test Provider Address is missing from configuration (JSONRPC).');
         }
-        provider = new JsonRpcProvider(providerAddress);
+        provider = new providers.JsonRpcProvider(providerAddress);
     }
 };
 /**

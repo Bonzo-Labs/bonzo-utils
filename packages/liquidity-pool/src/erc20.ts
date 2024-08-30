@@ -3,8 +3,7 @@
  * Released under the MIT License.
  * See LICENSE file in the project root for full license information.
  */
-import { AddressLike, Contract, Provider } from "ethers";
-import { asStringOrAddressable } from "./util";
+import { BigNumber, Contract, providers } from "ethers";
 /**
  * Human Readable ABI definitions for methods supported by
  * the Erc20 helper class.
@@ -31,15 +30,15 @@ export class Erc20 {
      * @param provider provides read-only access to the remote network.
      * @param token the address of the HTS token or ERC-20 token's contract.
      */
-    constructor(provider: Provider, token: AddressLike) {
-        this._contract = new Contract(asStringOrAddressable(token), abi, provider);
+    constructor(provider: providers.Provider, token: string) {
+        this._contract = new Contract(token, abi, provider);
     }
     /**
      * Retrieves the token balance for the given account (in smallest unit)
      * @param account the account address to query the balance of.
      * @returns a promise returning the account's token balance.
      */
-    public balanceOf(account: AddressLike): Promise<bigint> {
+    public balanceOf(account: string): Promise<BigNumber> {
         return this._contract.balanceOf(account);
     }
     /**
@@ -60,7 +59,7 @@ export class Erc20 {
      * Retrieves the decimal values associated with the token.
      * @returns a promise returning the decimals for the token.
      */
-    public decimals(): Promise<bigint> {
+    public decimals(): Promise<BigNumber> {
         return this._contract.decimals();
     }
 }
